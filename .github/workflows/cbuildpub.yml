@@ -1,4 +1,4 @@
-name: C Builder sub
+name: C Builder pub
 
 on:
   push:
@@ -21,10 +21,10 @@ jobs:
       with:
           vs-version: 15.0
     
-    - name: msbuild project build
-      run: msbuild Vendor2.vcxproj /p:configuration=debug /p:platform=x64    
-    
-    - name: subsribe 
+    - name: msbuild solution build
+      run: msbuild Vendor2.vcxproj /p:configuration=debug /p:platform=x64
+      
+    - name: publish
       run: |
-        D:\a\sampleSyncDevices\sampleSyncDevices\x64\Debug\Vendor2.exe sub
-      timeout-minutes:  1
+        (echo henry && echo x-ray && echo cardiac && echo N)| D:\a\sampleSyncDevices\sampleSyncDevices\x64\Debug\Vendor2.exe pub
+    
